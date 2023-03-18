@@ -1,0 +1,144 @@
+/*--------------------------------------------- Imports --------------------------------------*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap');
+
+
+/*-----------------------------------------end of import -------------------------------------*/
+
+/* -------------------------------------General Style----------------------------------------- */
+:root{
+    --primary: #001e5b;
+    --secondary: #ff9966;
+    --tdark: rgb(13, 13, 13);
+    --light-text: rgb(90, 90, 90);
+}
+
+body{
+font-family: nyt-cheltenham, georgia,'times new roman',times,serif;;
+}
+
+
+/* ------------------------------------Navigation-------------------------------------------- */
+.navbar-brand{
+    font-family: 'Old English Text MT';
+    font-size: 3rem;
+    padding: 0;
+    color: var(--primary);
+}
+
+.navbar-brand:hover{
+    color: var(--primary);
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    color: var(--primary);
+}
+
+.navigation{
+    width: 80%;
+}
+
+@media screen and (max-width:992px) {
+    .navigation{
+        width: 100%;
+    }
+    #mainNav{
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+hr{
+    margin: 3px;
+    width: 100%;
+}
+
+.search{
+    position: relative;
+    margin-left: 2rem;
+}
+
+.offcanvas-navlist{
+   margin: 1rem;
+   line-height: 2;
+}
+
+.btn{
+    outline: none;
+}
+
+
+
+/* BANNER AREA */
+
+.banner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-area{
+    width: 80%;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width:992px) {
+    .banner-area{
+        width: 100%;
+    }
+}
+
+.banner-area-box{
+    padding-left: 1rem;
+}
+
+.banner-area-1{
+    padding: 0;
+}
+
+.carousel-inner{
+    height: 60vh;
+    width: 100%;
+}
+
+.carousel-item{
+    height: inherit;
+}
+
+.carousel-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gradient{
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(249,249,249,0) 69%);
+}
+
+.carousel-caption{
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.carousel-category{
+    background-color: #001e5b;
+    font-weight: bold;
+    padding: .2rem;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    width: 4rem;
+    opacity: 1;
+}
