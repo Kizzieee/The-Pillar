@@ -14,7 +14,8 @@ $navbar-light-active-color: #fff;
 $custom-theme-colors: (
     "tdark": rgb(13, 13, 13),
     "light-secondary": rgb(255, 213, 193),
-    "white": #fff
+    "white": #fff,
+    "light-gray": #efefef
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);

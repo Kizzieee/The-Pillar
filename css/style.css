@@ -13,16 +13,33 @@
     --secondary: #ff9966;
     --tdark: rgb(13, 13, 13);
     --light-text: rgb(90, 90, 90);
+    --old-text: 'Old English Text MT', serif;
 }
 
 body{
-font-family: nyt-cheltenham, georgia,'times new roman',times,serif;;
+font-family: nyt-cheltenham, georgia,'times new roman',times,serif;
 }
+
+
+.glassmorphism {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .full-screen{
+    width: 100%;
+    height: 100vh;
+  }
+  
+
 
 
 /* ------------------------------------Navigation-------------------------------------------- */
 .navbar-brand{
-    font-family: 'Old English Text MT';
+    font-family: 'Old English Text MT', serif;
     font-size: 3rem;
     padding: 0;
     color: var(--primary);
@@ -49,26 +66,29 @@ font-family: nyt-cheltenham, georgia,'times new roman',times,serif;;
     width: 80%;
 }
 
-
-#navLinks{
-    transition: background-color 0.5s ease-in-out;
+#mainNavAbout{
+    transition: background-color 0.3s ease-in-out;
 }
+    #mainNavAbout.scrolled{
+        background-color: var(--primary);
+    }
 
 
-#navLinks.sticky{
-    background-color: var(--primary);
-    padding: .2rem;
-}
-
-
-#navLinks.sticky .nav-list>a {
-    color: #fff;
-    padding: 2px;
+.navLinks {
+    background-color: white;
+    transition: background-color 0.3s ease-in-out;
   }
-
-#navLinks.sticky .nav-list>a:hover {
-    text-shadow: 2px 2px 4px rgb(223, 223, 223);
-}
+  .navLinks.scrolled{
+    background-color: var(--primary);
+    color: #fff;
+    padding-top: 1rem;
+  }
+  .navLinks.scrolled .nav-list a{
+    color: #fff;
+  }
+  .navLinks.scrolled hr{
+    display: none;
+  }
 
 
 @media screen and (max-width:992px) {
@@ -87,7 +107,6 @@ hr{
 
 .search{
     position: relative;
-    margin-left: 2rem;
 }
 
 .offcanvas-navlist{
@@ -120,6 +139,7 @@ hr{
         width: 100%;
     }
 }
+
 
 .banner-area-box{
     padding: 0;
@@ -302,6 +322,7 @@ hr{
 .highlight-article{
     display: flex;
     flex-direction: row;
+    margin-bottom: 1rem;
 }
 
 .highlight-article-img{
@@ -546,6 +567,19 @@ hr{
     padding: .5rem;
 }
 
+.reply-to-comment{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.reply-container{
+    border-radius: 1rem;
+    background-color: #efefef;
+    padding: .5rem;
+}
 
 .commenting_section{
     width: 100%;
@@ -560,13 +594,419 @@ hr{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
 }
 
-.user-name{
-    
-}
-
 .btn-post{
     display: flex;
     justify-content: flex-end;
     margin-top: .5rem;
     margin-right: .5rem;
 }
+
+.posted-comment{
+    padding: .5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+.reply-btn{
+    cursor: pointer;
+    padding: .5rem;
+    color: var(--primary);
+}
+
+.reply-btn:hover{
+    text-decoration: underline;
+}
+
+.reply-to-comment-name{
+    font-size: smaller;
+    color: #535353;
+}
+
+.date-comment{
+    font-size: smaller;
+    color: #535353;
+}
+
+
+/* ----------------------------------------- ABOUT ---------------------------- */
+.wide-banner{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding: 0;
+}
+
+.wide-banner-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-left: 1.5rem;
+    position: absolute;
+    color: var(--primary);
+    top: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, transparent 100%);
+}
+
+
+
+.overlay{
+    
+    height: 100%;
+    position: absolute;
+    background-color: var(--primary);
+    opacity: .3;
+}
+
+.wide-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wide-banner-info h1{
+    font-size: 7rem;
+    margin: 0;
+    font-family: 'Old English Text MT';
+
+}
+
+.wide-banner-info span{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .wide-banner-info{
+        width: 100%;
+        padding-left: 0;
+    }
+    .wide-banner-info h1{
+        font-size: 4rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wide-banner-info span{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.brand-logo{
+    width: auto;
+    height: 70px;
+    object-fit: cover;
+    padding: .5rem;
+}
+
+.brand-name{
+    font-family: var(--old-text);
+    color: #fff;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .brand-name{
+        font-size: 1.2rem;
+    }
+}
+
+  
+.about-row{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+}
+
+.pillar-staff{
+    background-color: #ff9966;
+}
+.about-col{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0;
+    width: 22%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .about-row{
+        padding: 0;
+    }
+    .about-col{
+       width: 40%;
+       height: auto;
+       margin: 0;
+    }
+
+    .about-col .writer-name{
+        font-size: .7rem;
+    }
+
+    .member-info p{
+        font-size: smaller;
+    }
+}
+
+.about-head  .title{
+    font-size: 4rem;
+    font-family: var(--old-text);
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .about-head .title{
+        font-size: 2rem;
+    }
+}
+
+.about-head span{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .about-head span{
+        font-size: 1rem;
+    }
+}
+
+.about-position{
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .about-position h2{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.about-col span{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.about-col img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.member-info{
+    line-height: 1.5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: .3rem;
+}
+
+.about-col .writer-name{
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary);
+}
+
+
+/* ----------------------------------------MODAL-------------------------- */
+
+.modal-dialog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-content{
+    border: none;
+}
+.modal-header{
+    border: none;
+}
+
+
+.modal-body{
+    padding-left: 2rem;
+    padding-right: 2em;
+    height: 100%;
+    margin-bottom: 1rem;
+}
+
+
+/*------------------------------------------------ Use Profile -------------------------------------*/
+.user-profile{
+    height: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-profile{
+    height: 80%;
+    margin: 0;
+}
+
+
+
+.tab-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.user-tab-content, .user-info-content{
+    height: 100%; 
+}
+
+.user-tab-content{
+    padding: 1rem;
+}
+
+.profile-img{
+    position: relative;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+}
+
+.user-account-profile{
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--primary);
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.user-account-profile>img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.edit-profile-img{
+    display: none;
+    margin-top: -3rem;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.cont-edit-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--secondary);
+    overflow: hidden;
+}
+
+.cont-edit-img .profile-img-btn{
+    opacity: 1;
+}
+
+.profile-img:hover .edit-profile-img{
+    display: block;
+}
+
+.tablist{
+    height: 100%;
+    width: 13rem;
+}
+
+.tablist.nav-link{
+    color: var(--primary);
+}
+
+.tablist>.nav-link.active{
+    background-color: var(--primary);
+    font-weight: bold;
+}
+
+@media screen and ( min-width: 768px) {
+    .tablist{
+        padding-right: 1rem;
+       border-right: 2px solid gray;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .tablist{
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .tablist>.nav-link{
+        justify-content: center;
+        padding: .1rem;
+    }
+
+    .user-info-content{
+        margin-bottom: 2rem;
+    }
+}
+
+.logout-btn{
+    background-color: #fff;
+}
+.logout-btn:hover{
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+}
+
+.security-description{
+    text-align: justify;
+}
+
+.password-sec{
+    width: 70%;
+}
+
+.delete-icon{
+    font-size: 3rem;
+    color: white;
+    padding: .5rem 1rem;
+    background-color: red;
+    border-radius: .5rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .password-sec{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .accountM-sec{
+        margin-top: 1rem;
+        border-top: 2px solid var(--light-text);
+        padding-top: 1rem;
+    }
+}
+
